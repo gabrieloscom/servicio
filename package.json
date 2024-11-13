@@ -1,5 +1,5 @@
 {
-  "name": "mi-proyecto-sql",
+  "name": "backend_accesos",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "backend_accesos": "file:",
+    "cors": "^2.8.5",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "mi-proyecto-sql": "file:",
     "mssql": "^11.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieloscom/services_test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gabrieloscom/services_test/issues"
+  },
+  "homepage": "https://github.com/gabrieloscom/services_test#readme",
+  "description": ""
 }

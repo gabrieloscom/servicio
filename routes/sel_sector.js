@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const cors = require('cors'); // Importa el middleware CORS
 //const { sql, getPool } = require('../dbConfig.js'); // Importamos el pool
 //const path = require('path');
 //const { sql, getPool } = require(path.join(__dirname, '../dbConfig'));
 
 const { sql, getPool } = require('./dbconfig');
 
-router.get('/', async (req, res) => {
+//router.get('/', async (req, res) => {
+  router.get('/', cors(), async (req, res) => {
   // Obtener los parámetros de la consulta
   const Idsector = parseInt(req.query.Idsector) || 1;
     console.log(Idsector)

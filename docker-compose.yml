@@ -1,4 +1,6 @@
 version: '3'
+volumes:
+      - ./src:/usr/app/
 services:
   mi_app:
     image: docker_servicio_gabriel

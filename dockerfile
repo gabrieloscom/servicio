@@ -1,17 +1,21 @@
-# Usa una imagen base de Node.js
+
+# Usa una imagen oficial de Node.js como base
 FROM node:16
 
-# Define el directorio de trabajo
-WORKDIR /code/test1
-# Copia el archivo package.json y package-lock.json, e instala dependencias
+# Establece el directorio de trabajo en la imagen Docker
+WORKDIR /app
+
+# Copia los archivos `package.json` y `package-lock.json`
 COPY package*.json ./
-RUN npm ci
 
-# Copia todos los archivos del proyecto al directorio de trabajo
-COPY .   /code/test1
+# Instala las dependencias
+RUN npm install
 
-# Exponer el puerto (opcional)
+# Copia el resto de la aplicación al contenedor
+COPY . .
+
+# Expone el puerto en el que la aplicación se ejecuta
+EXPOSE 3000
 
 # Comando para iniciar la aplicación
-
-CMD ["node", "/code/test1/app.js"]
+CMD ["node", "app.js"]

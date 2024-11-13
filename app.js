@@ -2,7 +2,7 @@
 const express = require('express');
 const { connectToDatabase } = require('./dbconfig');
 const path = require('path');
-
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
@@ -12,6 +12,8 @@ connectToDatabase();
 
 // Middlewares
 app.use(express.json());
+// Habilitar CORS para todas las rutas
+app.use(cors());
 
 
 // Rutas de la API
@@ -26,12 +28,18 @@ app.use('/api/sel-area', require(path.resolve(__dirname, 'routes', 'sel_area.js'
 app.use('/api/sel-cantErrores', require(path.resolve(__dirname, 'routes', 'sel_cant_errores.js'))); // Ruta absoluta
 app.use('/api/sel-ingresos', require(path.resolve(__dirname, 'routes', 'sel_ingresos.js'))); // Ruta absoluta
 app.use('/api/sel-sector', require(path.resolve(__dirname, 'routes', 'sel_sector.js'))); // Ruta absoluta
+//app.use(cors('/api/sel-sector', require(path.resolve(__dirname, 'routes', 'sel_sector.js')))); // Ruta absoluta
 app.use('/api/sel-tipo-visita', require(path.resolve(__dirname, 'routes', 'sel_tipo_visita.js'))); // Ruta absoluta
 app.use('/api/control-afiliado', require(path.resolve(__dirname, 'routes', 'sel_tipo_visita.js'))); // Ruta absoluta
 app.use('/api/update-tipo-visita', require(path.resolve(__dirname, 'routes', 'update_tipoVisita.js'))); // Ruta absoluta
 
 
+//const express = require('express');
+//const cors = require('cors');
+//const app = express();
 
+// Permitir todas las solicitudes desde cualquier origen
+//app.use(cors());
 
 
 

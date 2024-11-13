@@ -3,10 +3,10 @@ const sql = require('mssql');
 //require('dotenv').config();
 
 const dbConfig = {
-    user: 'sa', // Usuario de la base de datos
-    password: 'Malcom@7100', // Contraseña del usuario
-    server: '10.0.102.138', // Nombre o dirección IP del servidor
-    database: 'db_accesos', // Nombre de la base de datos
+    user: 'user', // Usuario de la base de datos
+    password: 'pass', // Contraseña del usuario
+    server: 'ip', // Nombre o dirección IP del servidor
+    database: 'nombre bd', // Nombre de la base de datos
     options: {
         encrypt: true, // Usar 'true' si usas Azure
         trustServerCertificate: true // Cambiar a 'true' si no usas SSL
